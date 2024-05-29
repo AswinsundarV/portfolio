@@ -1,0 +1,123 @@
+.maincont{
+    background-image: url("src/assets/aqualaven.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;  
+  background-size: cover;
+
+    background-color: tomato;
+}
+
+
+.con h1{
+    padding-top: 100px;
+    padding-left: 170px;
+
+    
+}
+ 
+.let{
+    padding-right: 750px;
+    padding-top: 50px;
+    font-size:30px;
+    color: black;
+}
+
+.dont{
+    color: black;
+    padding-left: 160px;
+    padding-top: 15px;
+    font-size:20px ;
+
+}
+
+.dont span{
+    color:red;
+
+}
+
+
+
+
+.our{
+    width: 280px;
+   margin-left: 650px;
+    border-radius: 110px;
+    border-color: whitesmoke;
+    height: 65px;
+    font-size: 20px;
+    text-align:center;
+
+    
+    
+}
+
+
+.add{
+    width: 260px;
+    border-radius: 110px;
+    border-color: antiquewhite;
+    height: 65px;
+    font-size: 20px;
+    text-align:center;
+    
+    
+}
+
+.cor{
+    width: 570px;
+    border-radius: 110px;
+    border-color: antiquewhite;
+    height: 65px;
+    font-size: 20px;
+    text-align:center;
+    
+}
+
+.age{
+    width: 570px;
+    border-radius: 50px;
+    border-color: antiquewhite;
+    height: 135px;
+    font-size: 20px;
+    text-align:center;
+    color: antiquewhite;
+    
+}
+ .onx{
+    
+  padding: 60px 0px;
+  padding-left: 800px;
+
+ } 
+ .onx button{
+    padding: 18px;
+    border-radius: 35px;
+    width: 250px;
+    font-size: 20px;
+    border: 1px solid green;
+    background-color: rgba(0, 128, 0, 0.884);
+    color: whitesmoke;
+    
+ }
+.one{
+    position: relative;
+    bottom: 120px;
+}
+.two{
+    position: relative;
+    bottom: 120px;
+}
+.three{
+    position: relative;
+bottom: 120px;
+left: 650px;
+
+}
+.four{
+    position: relative;
+    top: 20px;
+    left: 70px;
+}
+.get{
+    color: black;
+}

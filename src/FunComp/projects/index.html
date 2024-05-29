@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simple Drawing App</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+  <canvas id="canvas"></canvas>
+  <div id="tools">
+    <button id="pencil" class="active">Pencil</button>
+    <button id="eraser">Eraser</button>
+    <input type="range" id="pencil-size" min="1" max="20" value="5">
+    <input type="color" id="color-picker" value="#000000">
+  </div>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const canvas = document.getElementById('canvas');
+  const ctx = canvas.getContext('2d');
+  
+  let painting = false;
+  let erasing = false;
+  let pencilSize = 5;
+  let pencilColor = '#000000'; // Default color is black
+
+  canvas.width = window.innerWidth * 0.8;
+  canvas.height = window.innerHeight * 0.8;
+
+  function startPosition(e) {
+    if (erasing) {
+      ctx.strokeStyle = canvas.style.backgroundColor;
+      ctx.lineWidth = 20; // Set a larger line width for eraser
+    } else {
+      ctx.strokeStyle = pencilColor; // Use the selected pencil color
+      ctx.lineWidth = pencilSize;
+    }
+    
+    painting = true;
+    draw(e);
+  }
+
+  function endPosition() {
+    painting = false;
+    ctx.beginPath();
+  }
+
+  function draw(e) {
+    if (!painting) return;
+
+    ctx.lineCap = 'round';
+
+    ctx.lineTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
+  }
+
+  function toggleEraser() {
+    erasing = !erasing;
+    if (erasing) {
+      document.getElementById('eraser').classList.add('active');
+      document.getElementById('pencil').classList.remove('active');
+    } else {
+      document.getElementById('eraser').classList.remove('active');
+      document.getElementById('pencil').classList.add('active');
+    }
+  }
+
+  function changePencilSize() {
+    pencilSize = this.value;
+  }
+
+  function changePencilColor() {
+    pencilColor = this.value;
+  }
+
+  canvas.addEventListener('mousedown', startPosition);
+  canvas.addEventListener('mouseup', endPosition);
+  canvas.addEventListener('mousemove', draw);
+
+  document.getElementById('eraser').addEventListener('click', toggleEraser);
+  document.getElementById('pencil').addEventListener('click', () => {
+    erasing = false;
+    toggleEraser();
+  });
+  document.getElementById('pencil-size').addEventListener('input', changePencilSize);
+  document.getElementById('color-picker').addEventListener('input', changePencilColor); // Listen for color input changes
+});
+
+</script>
+</body>
+</html>

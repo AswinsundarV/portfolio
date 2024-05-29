@@ -1,0 +1,32 @@
+.logmain{
+  background-color: cadetblue;
+}
+
+
+
+.memy{
+  padding: 80px ;
+ 
+}
+.logoimg{
+ 
+    margin: 30px 70px;
+  }
+  .logoimggit{
+      border-radius: 800px;
+      -webkit-border-radius: 800px;
+      -moz-border-radius: 800px;
+      -ms-border-radius: 800px;
+      -o-border-radius: 800px;
+  }
+  
+  
+  .logsub{
+    display: grid;
+    grid-template-columns: auto auto auto auto ;
+    margin-left: 80px;
+    margin-right: 0px;
+  gap: 10px;
+  }
+  
+  
